@@ -23,7 +23,7 @@
     "inquirer": "^9.1.5"
   },
   "devDependencies": {
-    "@oclif/test": "^2.3.10",
+    "@oclif/test": "^2.3.13",
     "@types/better-sqlite3": "^7.6.3",
     "@types/chai": "^4",
     "@types/inquirer": "^9.0.3",
