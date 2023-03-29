@@ -1,4 +1,4 @@
-import {Args, Command, Flags} from '@oclif/core'
+import {Args, Command, Flags, ux} from '@oclif/core'
 
 export default class TasksNew extends Command {
   static description = 'Create a new Salesforce Task'
@@ -14,11 +14,12 @@ export default class TasksNew extends Command {
   }
 
   static args = {
-    subject: Args.string({name: 'subject',
-      options: ['Call', 'Email', 'Send Letter', 'Send Quote', 'Other'],
-      required: true,
-      description: 'Enter the subject of the Task',
-    }),
+    subject: Args.string(
+      {name: 'subject',
+        options: ['Call', 'Email', 'Send Letter', 'Send Quote', 'Other'],
+        // required: true,
+        description: 'Enter the subject of the Task',
+      }),
     comment: Args.string({name: 'comment',
       required: false,
       description: 'Enter the task comment',
@@ -32,7 +33,11 @@ export default class TasksNew extends Command {
       console.log(`Comment ${args.comment}`)
     }
 
-    this.warn('not implemented')
-    this.error('not implemented')
+    let subject = args.subject
+    if (!subject) {
+      subject = (await ux.prompt('What is the subject of your task?')).toString()
+    }
+
+    this.log(`Creating a Task with a subject ${subject}`)
   }
 }

@@ -1,4 +1,4 @@
-type Task = {
+export type Task = {
     id: number,
     subject: string,
     comment: string,
