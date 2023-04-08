@@ -24,7 +24,7 @@
   },
   "devDependencies": {
     "@oclif/test": "^2.3.10",
-    "@types/better-sqlite3": "^7.6.3",
+    "@types/better-sqlite3": "^7.6.4",
     "@types/chai": "^4",
     "@types/inquirer": "^9.0.3",
     "@types/mocha": "^9.0.0",
